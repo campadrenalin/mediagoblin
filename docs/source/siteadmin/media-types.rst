@@ -75,7 +75,7 @@ Video
 
 To enable video, first install gstreamer and the python-gstreamer
 bindings (as well as whatever gstremaer extensions you want,
-good/bad/ugly).  On Debianoid systems
+good/bad/ugly).  On Debianoid systems [#trusty]_
 
 .. code-block:: bash
 
@@ -113,7 +113,7 @@ Audio
 To enable audio, install the gstreamer and python-gstreamer bindings (as well
 as whatever gstreamer plugins you want, good/bad/ugly), scipy and numpy are
 also needed for the audio spectrograms.
-To install these on Debianoid systems, run::
+To install these on Debianoid systems [#trusty]_, run::
 
     sudo apt-get install python-gst0.10 gstreamer0.10-plugins-{base,bad,good,ugly} \
         gstreamer0.10-ffmpeg python-numpy python-scipy
@@ -241,4 +241,16 @@ Run
 
     ./bin/gmg dbupdate
 
+.. [#trusty] Except Ubuntu 14.04 Trusty Tahr, which has a packaging regression -
+             most of these packages are available, but gstreamer0.10-ffmpeg is
+             not. You can work around this annoyance by adding the saucy
+             universe repos to your /etc/apt/sources.list. Then apt-get update,
+             of course.
+
+             .. code-block:: sources
+
+                 deb http://us.archive.ubuntu.com/ubuntu/ saucy universe
+                 deb-src http://us.archive.ubuntu.com/ubuntu/ saucy universe
+
+             For maximum efficiency, use your own country code, rather than 'us'.
 
